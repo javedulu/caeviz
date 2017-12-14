@@ -1,0 +1,38 @@
+{
+  "name": "caevis",
+  "version": "0.0.1",
+  "authors": [
+    "Javed Shaik <javedulu@gmail.com>"
+  ],
+  "description": "Web based visualizatio for CAE Models",
+  "main": "appsrv.js",
+  "moduleType": [],
+  "keywords": [
+    "(Web",
+    "/",
+    "ARM",
+    ")",
+    "based",
+    "CAE",
+    "Models",
+    "Explorer",
+    "/",
+    "Visualizer"
+  ],
+  "license": "GPLv2",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jszip": "~2.5.0",
+    "jquery": "~2.1.4",
+    "three.js": "threejs#*",
+    "lodash": "~3.10.1"
+  }
+}
