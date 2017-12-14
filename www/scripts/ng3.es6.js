@@ -587,7 +587,7 @@ var ng3jswidget = class {
       this._sRender = true;
   };
   updateSceneBoundingBox(newBoundingBox){
-    this.sceneCenter(newBoundingBox.center());
+    this.sceneCenter(newBoundingBox.getCenter());
     this._sceneRadius = newBoundingBox.size().length()/2;
   };
   destroy () {

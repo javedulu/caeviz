@@ -66,7 +66,7 @@ THREE.Object3D.prototype.getCentroid = function(world)
 		bbox.min.applyMatrix4(this.matrixWorld);
 		bbox.max.applyMatrix4(this.matrixWorld);
 	}
-	return bbox.center();
+	return bbox.getCenter();
 }
 THREE.Object3D.prototype.computeBoudingBoxSphere = function()
 {
@@ -125,8 +125,9 @@ THREE.CSJZLoader.prototype = {
 	load: function ( url, onLoad, onProgress, onError ) {
 		var scope = this;
 		console.time( 'CSJZLoader' );
-		var loader = new THREE.XHRLoader( scope.manager );
-		//loader.setCrossOrigin( this.crossOrigin );
+		var loader = new THREE.FileLoader( scope.manager );
+        if (loader.setCrossOrigin !== undefined)
+            loader.setCrossOrigin( this.crossOrigin );
 		loader.setResponseType('arraybuffer');
         function onError(err){
             console.warn("Error ...",err);
@@ -180,7 +181,7 @@ THREE.CSJZLoader.prototype = {
                                    part.frames[frame] = part.states["STATE_"+frame]
                                }
                                else{
-                                   console.error("frame not found ..:",frame);
+                                   //console.error("frame not found ..:",frame);
                                }
                            });
                            delete(part.states);

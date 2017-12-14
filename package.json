@@ -5,7 +5,7 @@
   "scripts": {
     "es": "babel --presets es2015 www/scripts/ng3.es6.js > www/scripts/ng3.js",
     "build": "bower install && npm run es && grunt build",
-    "dev": "node_modules/.bin/static -H '{\"Cache-Control\": \"no-cache, must-revalidate\"}' www",
+    "dev": "npm run es && node_modules/.bin/static -H '{\"Cache-Control\": \"no-cache, must-revalidate\"}' www",
     "prod": "node_modules/.bin/static dist/www",
     "clean": "rm -rf ./dist"
   },
